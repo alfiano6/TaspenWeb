@@ -23,3 +23,16 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('login', (username, password) =>
+{
+    cy.session([username, password], () =>
+    {
+        cy.visit('https://dev-website-app.tabungselalu.id/auth/login')
+        cy.get("#username").type("yopidm")
+        cy.get("#password").type("satu2345")
+        cy.get("button[type='submit']").click()
+        cy.get('.toast-state.show.success').should('include.text', 'Masuk Berhasil')
+    })
+}
+)

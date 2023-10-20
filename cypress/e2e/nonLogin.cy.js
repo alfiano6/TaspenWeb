@@ -66,6 +66,44 @@ describe('Feauture Non Login', () => {
     cy.xpath("//p[normalize-space()='taspen@taspen.co.id']")
       .should('include.text', 'taspen@taspen.co.id')
   })
+
+  it('NL8', () => {
+    cy.visit('https://dev-website-app.tabungselalu.id')
+    cy.scrollTo('0', '2500')
+    cy.get("div[class='d-flex flex-row align-items-center justify-content-between mb-3 styles_cssContentTitle__R6tGb'] h1[class='styles_cssTitle__o75U1']").should('include.text', 'Formulir Pengajuan')
+    cy.get(".styles_cssBoxDocument__HB9aS").should('have.length', '4')
+  })
+
+  it('NL9', () => {
+    cy.visit('https://dev-website-app.tabungselalu.id')
+    cy.scrollTo('0', '2500')
+    cy.get("div[class='d-flex flex-row align-items-center justify-content-between mb-3 styles_cssContentTitle__R6tGb'] h1[class='styles_cssTitle__o75U1']").should('include.text', 'Formulir Pengajuan')
+    cy.get("body > div:nth-child(1) > main:nth-child(1) > nav:nth-child(1) > main:nth-child(2) > section:nth-child(1) > div:nth-child(4) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > a:nth-child(2) > p:nth-child(1)").click()
+    cy.get(".styles_cssBoxDocument__bMKlB")
+    cy.get(".styles_cssTitle__G9q8g").should('include.text', 'Formulir Pengajuan')
+  })
+
+  it('NL10', () => {
+    cy.visit('https://dev-website-app.tabungselalu.id')
+    cy.scrollTo('0', '2500')
+    cy.get("div[class='d-flex flex-row align-items-center justify-content-between mb-3 styles_cssContentTitle__R6tGb'] h1[class='styles_cssTitle__o75U1']").should('include.text', 'Formulir Pengajuan')
+    cy.get("div[class='col-sm-6 mt-4 mb-4'] button[type='button']").click()
+  })
+
+  it('NL11', () => {
+    cy.visit('https://dev-website-app.tabungselalu.id')
+    cy.scrollTo('0', '2500')
+    cy.get("div[class='d-flex flex-row align-items-center justify-content-between mb-3 styles_cssContentTitle__R6tGb'] h1[class='styles_cssTitle__o75U1']").should('include.text', 'Formulir Pengajuan')
+    cy.get("body > div:nth-child(1) > main:nth-child(1) > nav:nth-child(1) > main:nth-child(2) > section:nth-child(1) > div:nth-child(4) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > a:nth-child(2) > p:nth-child(1)").click()
+    cy.get(".styles_cssBoxDocument__bMKlB")
+    cy.get("button[class='btn btn-info']").click()
+  })
+
+  
+
+  
+
+
 })
 
 

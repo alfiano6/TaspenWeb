@@ -1,5 +1,5 @@
 describe('Feauture Non Login', () => {
-  /*it('NL1', () => {
+  it('NL1', () => {
     cy.visit('https://dev-website-app.tabungselalu.id')
     cy.get('body > div:nth-child(1) > main:nth-child(1) > nav:nth-child(1) > main:nth-child(2) > section:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(5) > a:nth-child(1) > div:nth-child(1)').click()
     cy.get('body > div:nth-child(1) > main:nth-child(1) > nav:nth-child(1) > main:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > a:nth-child(1) > div:nth-child(1)').click()
@@ -113,7 +113,7 @@ describe('Feauture Non Login', () => {
     cy.get("body > div:nth-child(1) > main:nth-child(1) > nav:nth-child(1) > main:nth-child(2) > section:nth-child(1) > div:nth-child(4) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > a:nth-child(2) > p:nth-child(1)").click()
     cy.get(".w-100.styles_cssBox__H_Ds0")
     cy.get(".styles_cssTitle__G9q8g").should('include.text', 'Dokumen Taspen')
-  })*/
+  })
 
   it('NL14', () => {
     cy.visit('https://dev-website-app.tabungselalu.id')

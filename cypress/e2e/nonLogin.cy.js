@@ -1,4 +1,4 @@
-/*describe('FAQ', () => {
+describe('FAQ', () => {
   it('NL1', () => {
     cy.visit('https://dev-website-app.tabungselalu.id')
     cy.get('body > div:nth-child(1) > main:nth-child(1) > nav:nth-child(1) > main:nth-child(2) > section:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(5) > a:nth-child(1) > div:nth-child(1)').click()
@@ -207,7 +207,7 @@ describe('Lokasi Layanan', () => {
     cy.get("body > div:nth-child(1) > main:nth-child(1) > nav:nth-child(1) > main:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3)")
       .should("have.css", "font-family")
   })
-})*/
+})
 
 describe('Pengaduan & Pertanyaan', () => {
   it('NL23', () => {
@@ -218,12 +218,17 @@ describe('Pengaduan & Pertanyaan', () => {
     cy.get("body > div:nth-child(1) > main:nth-child(1) > nav:nth-child(1) > main:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > a:nth-child(1) > div:nth-child(1)").click()
     cy.url().should('include', '/taspen-care/complaint')
     cy.get("#ticket_category_id-2").click()
-    cy.get("#email").type('alfian@alfian.com')
+    cy.get("#email").type('al@gmail.com')
     cy.get("#phone_no").type('081234567890')
-    cy.get("#name").type('alfian')
+    cy.get("#name").type('al')
     cy.get("#status_member").select(1).invoke("val").should("eq", "Peserta Aktif")
-    cy.get(".css-19bb58m").type('jak{downArrow}') 
+    cy.get("#nip").type('111222333444')
+    cy.get(".css-19bb58m").type('yogya')
+    cy.wait(2000)
+    cy.xpath("/html/body/div/main/nav/main/div/div/div/div[1]/div/form/div[7]/div/div[2]/div/div").click()
+    cy.get("#message").type('cekhalo')
+    cy.get("div[class='col-md-8 mt-3'] p[class='m-0']").click()
+    cy.get(".modal-content.styles_cssContentModal__3MgwF").should('include.text','Pengaduan Berhasil')
   })
 
 })
-

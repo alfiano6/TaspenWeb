@@ -1,4 +1,4 @@
-describe('Feauture Non Login', () => {
+describe('FAQ', () => {
   it('NL1', () => {
     cy.visit('https://dev-website-app.tabungselalu.id')
     cy.get('body > div:nth-child(1) > main:nth-child(1) > nav:nth-child(1) > main:nth-child(2) > section:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(5) > a:nth-child(1) > div:nth-child(1)').click()
@@ -17,7 +17,9 @@ describe('Feauture Non Login', () => {
     cy.get("div[class='collapse show'] div[class='card-body']")
       .should('include.text', 'Enrollment Taspen adalah')
   })
+})
 
+describe('Kamus Taspen', () => {
   it('NL3', () => {
     cy.visit('https://dev-website-app.tabungselalu.id')
     cy.get('body > div:nth-child(1) > main:nth-child(1) > nav:nth-child(1) > main:nth-child(2) > section:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(5) > a:nth-child(1) > div:nth-child(1)').click()
@@ -36,7 +38,9 @@ describe('Feauture Non Login', () => {
     cy.get("div[class='collapse show'] div[class='card-body']")
       .should('include.text', 'Aparatur Sipil Negara')
   })
+})
 
+describe('Call Center', () => {
   it('NL5', () => {
     cy.visit('https://dev-website-app.tabungselalu.id')
     cy.get("body > div:nth-child(1) > main:nth-child(1) > nav:nth-child(1) > main:nth-child(2) > section:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(5) > a:nth-child(1) > div:nth-child(1) > div:nth-child(2)").click()
@@ -66,7 +70,9 @@ describe('Feauture Non Login', () => {
     cy.xpath("//p[normalize-space()='taspen@taspen.co.id']")
       .should('include.text', 'taspen@taspen.co.id')
   })
+})
 
+describe('Formulir Pengajuan', () => {
   it('NL8', () => {
     cy.visit('https://dev-website-app.tabungselalu.id')
     cy.scrollTo('0', '2500')
@@ -98,7 +104,9 @@ describe('Feauture Non Login', () => {
     cy.get(".styles_cssBoxDocument__bMKlB")
     cy.get("button[class='btn btn-info']").click()
   })
+})
 
+describe('Dokumen Taspen', () => {
   it('NL12', () => {
     cy.visit('https://dev-website-app.tabungselalu.id')
     cy.scrollTo('0', '2500')
@@ -131,8 +139,73 @@ describe('Feauture Non Login', () => {
     cy.get(".styles_cssTitle__G9q8g").should('include.text', 'Dokumen Taspen')
     cy.get("body > div:nth-child(1) > main:nth-child(1) > nav:nth-child(1) > main:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(4) > a:nth-child(2) > button:nth-child(1)").click()
   })
-  
-
 })
 
+describe('Dokumen Taspen', () => {
+  it('NL16', () => {
+    cy.visit('https://dev-website-app.tabungselalu.id')
+    cy.scrollTo('0', '2800')
+    cy.get(".styles_cssTitle__o75U1").should('include.text', 'Konten Terbaru')
+    cy.get("div[class='col-sm-12 mt-5'] div[class='row']").should('have.length', '1')
+  })
+
+  it('NL17', () => {
+    cy.visit('https://dev-website-app.tabungselalu.id')
+    cy.scrollTo('0', '2800')
+    cy.get(".styles_cssTitle__o75U1").should('include.text', 'Konten Terbaru')
+    cy.get("body > div:nth-child(1) > main:nth-child(1) > nav:nth-child(1) > main:nth-child(2) > section:nth-child(1) > div:nth-child(4) > div:nth-child(1) > div:nth-child(4) > div:nth-child(1) > a:nth-child(2) > p:nth-child(1)").click()
+    cy.url().should('include', '/content')
+  })
+
+  it('NL18', () => {
+    cy.visit('https://dev-website-app.tabungselalu.id')
+    cy.scrollTo('0', '2800')
+    cy.get(".styles_cssTitle__o75U1").should('include.text', 'Konten Terbaru')
+    cy.get("body div[id='__next'] div[class='row'] div[class='row'] div:nth-child(1) a:nth-child(1)").click()
+    cy.url().should('include', '/content/detail/1')
+    cy.get(".styles_cssTitleLists__b2f6J").should("have.css", "font-family")
+  })
+})
+
+describe('Lokasi Layanan', () => {
+  it('NL19', () => {
+    cy.visit('https://dev-website-app.tabungselalu.id')
+    cy.scrollTo('0', '800')
+    cy.get("body > div:nth-child(1) > main:nth-child(1) > nav:nth-child(1) > main:nth-child(2) > section:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(11) > a:nth-child(1) > div:nth-child(1)").click()
+    cy.url().should('include', '/location-services')
+    cy.get(".styles_cssTextTitle__fP0F_").should("include.text", "Lokasi Layanan")
+  })
+
+  it('NL20', () => {
+    cy.visit('https://dev-website-app.tabungselalu.id')
+    cy.scrollTo('0', '800')
+    cy.get("body > div:nth-child(1) > main:nth-child(1) > nav:nth-child(1) > main:nth-child(2) > section:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(11) > a:nth-child(1) > div:nth-child(1)").click()
+    cy.url().should('include', '/location-services')
+    cy.get("input[placeholder='Cari Lokasi, Tempat Layanan']").type('jos{enter}')
+    cy.get("div[class='d-flex flex-column'] div[class='container-fluid']").should("include.text", "jos")
+  })
+
+  it('NL21', () => {
+    cy.visit('https://dev-website-app.tabungselalu.id')
+    cy.scrollTo('0', '800')
+    cy.get("body > div:nth-child(1) > main:nth-child(1) > nav:nth-child(1) > main:nth-child(2) > section:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(11) > a:nth-child(1) > div:nth-child(1)").click()
+    cy.url().should('include', '/location-services')
+    cy.get("input[placeholder='Cari Lokasi, Tempat Layanan']").type('gaada{enter}')
+    cy.get("img[alt='not-found']").should('be.visible')
+  })
+
+  it('NL22', () => {
+    cy.visit('https://dev-website-app.tabungselalu.id')
+    cy.scrollTo('0', '800')
+    cy.get("body > div:nth-child(1) > main:nth-child(1) > nav:nth-child(1) > main:nth-child(2) > section:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(11) > a:nth-child(1) > div:nth-child(1)").click()
+    cy.url().should('include', '/location-services')
+    cy.get("input[placeholder='Cari Lokasi, Tempat Layanan']").type('jos{enter}')
+    cy.get("div[class='d-flex flex-column'] div[class='container-fluid']").should("include.text", "jos")
+    cy.get(".styles_cssSubTitle__pBWg8").should("have.css", "font-family")
+    cy.get("body > div:nth-child(1) > main:nth-child(1) > nav:nth-child(1) > main:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > p:nth-child(2)")
+      .should("have.css", "font-family")
+    cy.get("body > div:nth-child(1) > main:nth-child(1) > nav:nth-child(1) > main:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3)")
+      .should("have.css", "font-family")
+  })
+})
 

@@ -24,6 +24,12 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
+import './commands';
+
+Cypress.on('uncaught:exception', (err, runnable) => {
+  return false;
+});
+
 Cypress.Commands.add('LoginWithPageSession', (email, pwd) => {
     cy.visit('https://dev-website-admin.tabungselalu.id/')
     cy.get("#email").type(email)

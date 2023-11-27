@@ -1,4 +1,4 @@
-/*describe('FAQ', () => {
+describe('FAQ', () => {
   it('NL1', () => {
     cy.visit('https://dev-website-app.tabungselalu.id')
     cy.get('body > div:nth-child(1) > main:nth-child(1) > nav:nth-child(1) > main:nth-child(2) > section:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(5) > a:nth-child(1) > div:nth-child(1)').click()
@@ -207,10 +207,10 @@ describe('Lokasi Layanan', () => {
     cy.get("body > div:nth-child(1) > main:nth-child(1) > nav:nth-child(1) > main:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3)")
       .should("have.css", "font-family")
   })
-})*/
+})
 
 describe('Pengaduan & Pertanyaan', () => {
-  /*it('NL23', () => {
+  it('NL23', () => {
     cy.visit('https://dev-website-app.tabungselalu.id')
     cy.scrollTo('0', '800')
     cy.get("body > div:nth-child(1) > main:nth-child(1) > nav:nth-child(1) > main:nth-child(2) > section:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(5) > a:nth-child(1) > div:nth-child(1) > div:nth-child(2) > h3:nth-child(1)").click()
@@ -313,7 +313,7 @@ describe('Pengaduan & Pertanyaan', () => {
     cy.get("#code").type('2')
     cy.get("div[class='d-flex flex-column'] p[class='m-0']").click()
     cy.xpath("//div[@class='styles_cssBadgeWarning__Bw5bS']").contains('A0002')
-  })*/
+  })
 
   it('NL29', () => {
     cy.visit('https://dev-website-app.tabungselalu.id')
